@@ -19,7 +19,7 @@ public class Filter {
 
         if(conditionNummer == 2) {
             for (int i = 0; i < accounts.size(); i++) {
-                OurPredicate<Long,Boolean> predicate2 = (n,m) -> n > 100_000 && m == true;
+                OurPredicate<Long,Boolean> predicate2 = (n,m) -> n > 100_000 && m == false;
                 if (predicate2.test(accounts.get(i).getBalance(),accounts.get(i).isLocked())) {
                     newList.add(accounts.get(i));
 
