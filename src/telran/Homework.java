@@ -1,5 +1,6 @@
 package telran;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -52,26 +53,30 @@ public class Homework {
         evaluate(list,predicate5);
     }
 
-    private static double calculate(double a, double b, BinaryOperator<Double> binaryOperator) {
+    public static double calculate(double a, double b, BinaryOperator<Double> binaryOperator) {
         return binaryOperator.apply(a,b);
     }
 
-    private static void evaluate(List<Integer> list, Predicate<Integer> predicate1) {
+    public static List<Integer> evaluate(List<Integer> list, Predicate<Integer> predicate1) {
+        List<Integer> result = new ArrayList<>();
         for (Integer n:list) {
             if(predicate1.test(n)){
+                result.add(n);
                 System.out.print(n+" ");
             }
         }
         System.out.println();
+        return result;
     }
 
-    private static void function(String s) {
+    public static long function(String s) {
         Function<String,Long> function = str -> Long.parseLong(str)*2;
         System.out.println("Result of function: "+function.apply(s));
+        return function.apply(s);
         
     }
 
-    private static void consumer(double a, double b, double c, int n) {
+    public static void consumer(double a, double b, double c, int n) {
         Consumer<Integer> consumer = integer -> {
           double count = (a + b + c)*integer;
             System.out.println(count);
