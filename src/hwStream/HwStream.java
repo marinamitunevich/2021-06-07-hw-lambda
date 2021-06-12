@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 
 public class HwStream {
     public static void main(String[] args) {
-        task1();
+        System.out.println(task1());
         long n = 4;
         System.out.println(factorial(n));
 
@@ -37,7 +37,8 @@ public class HwStream {
     private static IntStream task1() {
         IntStream intStreamEven = IntStream.of(2,6,8,20,100,34,30);
         IntStream intStreamOdd = IntStream.of(75,3,15,35,65,45);
-        IntStream toReturn = IntStream.concat(intStreamEven,intStreamOdd).filter(s-> s % 3 == 0 && s % 5 == 0 );
+        IntStream toReturn = IntStream.concat(intStreamEven,intStreamOdd).filter(s-> s % 3 == 0 && s % 5 == 0 )
+                .skip(2);
         return toReturn;
     }
 
