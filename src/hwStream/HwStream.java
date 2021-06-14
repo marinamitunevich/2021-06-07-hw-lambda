@@ -38,7 +38,7 @@ public class HwStream {
         IntStream intStreamEven = IntStream.of(2,6,8,20,100,34,30);
         IntStream intStreamOdd = IntStream.of(75,3,15,35,65,45);
         IntStream toReturn = IntStream.concat(intStreamEven,intStreamOdd).filter(s-> s % 3 == 0 && s % 5 == 0 )
-                .skip(2);
+                .skip(2).sorted();
         return toReturn;
     }
 
